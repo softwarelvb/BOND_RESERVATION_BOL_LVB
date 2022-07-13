@@ -1,0 +1,5 @@
+@font-face {
+	font-family: "NotoSansLao";
+	font-display: swap;
+	src: local("NotoSansLao"), url("../fonts/laoFont.ttf") format("truetype");
+}
