@@ -12,48 +12,28 @@ export default {
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <h1 class="section-title text-center">
-              ຜະລິດຕະພັນ ແລະ ການບໍລິການຂອງ LVB
+              {{ $t("Service.Header") }}
             </h1>
             <div class="section-title-border margin-t-20"></div>
-            <p
-              class="
-                section-subtitle
-                text-muted text-center
-                padding-t-30
-                font-secondary
-              "
-            >
-              We craft digital, graphic and dimensional thinking, to create
-              category leading brand experiences that have meaning and add a
-              value for our clients.
-            </p>
           </div>
         </div>
-        <div class="row margin-t-30">
+        <div class="row margin-t-10">
           <div class="col-lg-4 margin-t-20">
             <div class="services-box">
               <div class="media">
-                <i class="pe-7s-diamond text-custom"></i>
+                <i class="pe-7s-news-paper text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Digital Design</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.LoanIndividual") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content. Moltin gives you the
-                    platform.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 margin-t-20">
-            <div class="services-box">
-              <div class="media">
-                <i class="pe-7s-display2 text-custom"></i>
-                <div class="media-body ml-4">
-                  <h4>Unlimited Colors</h4>
-                  <p class="pt-2 text-muted">
-                    Credibly brand standards compliant users without extensible
-                    services. Anibh euismod tincidunt ut laoreet Ipsum passage.
+                    {{ $t("Service.LoanIndividualDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/payment-account.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -64,10 +44,39 @@ export default {
               <div class="media">
                 <i class="pe-7s-piggy text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Strategy Solutions</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.CasaIndividual") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    Separated they live in Bookmarksgrove right at the coast of
-                    the Semantics, a large language ocean necessary regelialia.
+                    {{ $t("Service.CasaIndividualDetial") }}
+
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/payment-account.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 margin-t-20">
+            <div class="services-box">
+              <div class="media">
+                <i class="pe-7s-piggy text-custom"></i>
+                <div class="media-body ml-4">
+                  <h4 class="text-primary">
+                    {{ $t("Service.SavingIndividual") }}
+                  </h4>
+                  <p class="pt-2 text-muted">
+                    {{ $t("Service.SavingIndividualDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/payment-account.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -80,10 +89,17 @@ export default {
               <div class="media">
                 <i class="pe-7s-science text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Awesome Support</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.AccountPaymentORG") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    It is a paradisematic country, in which roasted parts of
-                    sentences fly into your mouth leave for the far World.
+                    {{ $t("Service.AccountingPaymentDetailORG") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/payment-account-enterprise.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -94,10 +110,17 @@ export default {
               <div class="media">
                 <i class="pe-7s-news-paper text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Truly Multipurpose</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.LoanORG") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    Even the all-powerful Pointing has no control about the
-                    blind texts it is an almost unorthographic.
+                    {{ $t("Service.LoanORGDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/payment-account-enterprise.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -106,29 +129,43 @@ export default {
           <div class="col-lg-4 margin-t-20">
             <div class="services-box">
               <div class="media">
-                <i class="pe-7s-plane text-custom"></i>
+                <i class="pe-7s-piggy text-custom"></i>
+
                 <div class="media-body ml-4">
-                  <h4>Easy to customize</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.SavingORG") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    Question Marks and devious Semikoli, but the Little Blind
-                    Text didn’t listen. She packed her seven versalia.
+                    {{ $t("Service.SavingORGDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/business-savings.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-lg-4 margin-t-20">
             <div class="services-box">
               <div class="media">
-                <i class="pe-7s-arc text-custom"></i>
+                <i class="pe-7s-global text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Pixel Perfect Design</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.PaymentOversea") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration.
+                    {{ $t("Service.PaymentOverseaDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/international-payments.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -137,12 +174,19 @@ export default {
           <div class="col-lg-4 margin-t-20">
             <div class="services-box">
               <div class="media">
-                <i class="pe-7s-tools text-custom"></i>
+                <i class="pe-7s-phone text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Perfect Toolbox</h4>
+                  <h4 class="text-primary">
+                    {{ $t("Service.DigiBank") }}
+                  </h4>
                   <p class="pt-2 text-muted">
-                    Hampden-Sydney College in Virginia, looked up one of the
-                    more obscure Latin words, consectetur.
+                    {{ $t("Service.DigiBankDetial") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/dich-vu-mobile-banking.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -153,10 +197,57 @@ export default {
               <div class="media">
                 <i class="pe-7s-timer text-custom"></i>
                 <div class="media-body ml-4">
-                  <h4>Awesome Design</h4>
+                  <h4 class="text-primary">{{ $t("Service.LVBQRPAY") }}</h4>
                   <p class="pt-2 text-muted">
-                    All the Lorem Ipsum generators on the Internet tend to
-                    repeat predefined chunks as necessary.
+                    {{ $t("Service.LVBQRPAYDetail") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/laovietbank-qr-pay.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 margin-t-20">
+            <div class="services-box">
+              <div class="media">
+                <i class="pe-7s-credit text-custom"></i>
+                <div class="media-body ml-4">
+                  <h4 class="text-primary">
+                    {{ $t("Service.LVBATM") }}
+                  </h4>
+                  <p class="pt-2 text-muted">
+                    {{ $t("Service.LVBATMDetail") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/product-card.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 margin-t-20">
+            <div class="services-box">
+              <div class="media">
+                <i class="pe-7s-wallet text-custom"></i>
+                <div class="media-body ml-4">
+                  <h4 class="text-primary">{{ $t("Service.LVBExchange") }}</h4>
+                  <p class="pt-2 text-muted">
+                    {{ $t("Service.LVBExchangeDetail") }}
+                    <b-link
+                      href="https://www.laovietbank.com.la/la/category/foreign-currency-trading-services.html"
+                      disabled
+                    >
+                      <em> {{ $t("Service.Detial") }} ...</em>
+                    </b-link>
                   </p>
                 </div>
               </div>
@@ -165,34 +256,6 @@ export default {
         </div>
       </div>
     </section>
-    <!--START SERVICES-->
-
-    <!--START WEBSITE-DESCRIPTION-->
-    <!-- <section
-      class="section bg-web-desc"
-      :style="{
-        'background-image': 'url(' + require('@/assets/images/img-1.jpg') + ')',
-        'background-size': 'cover',
-        'background-position': 'center',
-      }"
-    >
-      <div class="bg-overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="text-white">Build your dream website today</h2>
-            <p class="padding-t-15 home-desc mx-auto">
-              But nothing the copy said could convince her and so it didn’t take
-              long until a few insidious Copy Writers ambushed her.
-            </p>
-            <a href="#" class="btn btn-bg-white margin-t-30"
-              >View Plan & Pricing</a
-            >
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!--END WEBSITE-DESCRIPTION-->
   </div>
 </template>
 

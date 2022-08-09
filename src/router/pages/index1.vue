@@ -7,7 +7,7 @@ import Services from "@/components/services";
 // import GetStarted from "@/components/getstarted";
 // import Blog from "@/components/blog";
 import Contact from "@/components/contact";
-import Footer from "@/components/footer";
+// import Footer from "@/layouts/footer";
 // import Switcher from "@/components/switcher";
 
 /**
@@ -18,6 +18,7 @@ import { get } from "vuex-pathify";
 export default {
   computed: {
     token: get("token"),
+    isLoading: get("isLoading"),
   },
   components: {
     Features,
@@ -28,26 +29,17 @@ export default {
     // GetStarted,
     // Blog,
     Contact,
-    Footer,
+    // Footer,
     // Switcher,
   },
 
   methods: {
-    submit() {
-      let loader = this.$loading.show({
-        // Optional parameters
-        container: this.fullPage ? null : this.$refs.formContainer,
-        canCancel: true,
-        onCancel: this.onCancel,
-      });
-      // simulate AJAX
-      setTimeout(() => {
-        loader.hide();
-      }, 5000);
-    },
     /**
      * Toggle menu
      */
+    onGotoMenu(v) {
+      this.$router.push(v);
+    },
     toggleMenu() {
       document.getElementById("navbarCollapse").classList.toggle("show");
     },
@@ -57,7 +49,8 @@ export default {
 <template>
   <div>
     <!-- STRAT NAVBAR -->
-    <nav
+
+    <!-- <nav
       class="
         navbar navbar-expand-lg
         fixed-top
@@ -67,7 +60,6 @@ export default {
       id="navbar"
     >
       <div class="container">
-        <!-- LOGO -->
         <a class="navbar-brand logo text-uppercase" href="/">
           <img
             src="../../assets/images/Logo-LVB-HD.png"
@@ -164,7 +156,7 @@ export default {
                 <button
                   type="button"
                   class="btn btn-primary btn-sm navbar-btn btn-rounded"
-				  @click="submit"
+                  @click="submit"
                 >
                   ເຂົ້າສູ່ລະບົບ
                 </button>
@@ -173,7 +165,7 @@ export default {
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <!-- END NAVBAR -->
     <div v-scroll-spy>
       <!--START HOME-->
@@ -231,20 +223,22 @@ export default {
           <div class="row">
             <div class="col-lg-12 text-center">
               <h3 class="text-white">
-                ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ລະບົບ ໃຫ້ບໍລິການສ້າງແບບຟອມອອນໄລ ຂອງ ທລວ
+                {{ $t("Home.Welcome") }}
               </h3>
               <p class="padding-t-15 home-desc mx-auto">
-                But nothing the copy said could convince her and so it didn’t
-                take long until a few insidious Copy Writers ambushed her.
+                {{ $t("Home.Welcome1") }}
               </p>
-              <a href="#" class="btn btn-bg-white margin-t-30">
+              <a
+                @click="onGotoMenu('/form-online')"
+                class="btn btn-bg-white margin-t-30"
+              >
                 <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
                     d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"
                   />
                 </svg>
-                ລົງທະບຽນ ເພື່ອສ້າງແບບຟອມຕ່າງໆ</a
+                {{ $t("Home.RegisterForm") }}</a
               >
             </div>
           </div>
@@ -274,26 +268,6 @@ export default {
                 />
               </div>
             </div>
-
-            <!-- <div class="col-md-3">
-              <div class="client-images my-3 my-md-0">
-                <img
-                  src="@/assets/images/clients/3.png"
-                  alt="logo-img"
-                  class="mx-auto img-fluid d-block"
-                />
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="client-images my-3 my-md-0">
-                <img
-                  src="@/assets/images/clients/4.png"
-                  alt="logo-img"
-                  class="mx-auto img-fluid d-block"
-                />
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -306,11 +280,13 @@ export default {
       <!-- <GetStarted /> -->
       <!-- <Blog /> -->
       <Contact />
-      <Footer />
+      <!-- <Footer /> -->
       <!-- <Switcher /> -->
     </div>
   </div>
 </template>
+
+
 
 <style scoped>
 ::v-deep .modal-content {

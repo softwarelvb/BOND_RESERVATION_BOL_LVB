@@ -8,7 +8,12 @@ import {
 import createPersistedState from 'vuex-persistedstate'
 
 const state = {
-	token: ""
+	token: "",
+	session: "",
+	lang: 'la',
+	loading: false,
+	modalAlert: null,
+	confirmModal: false
 }
 
 

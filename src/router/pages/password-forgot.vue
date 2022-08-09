@@ -4,13 +4,18 @@
  */
 export default {
   name: "password-forgot",
+  methods: {
+    onGotoMenu(v) {
+      this.$router.push(v);
+    },
+  },
 };
 </script>
 
 <template>
   <div class="bg-account-pages py-4 py-sm-0">
     <div class="account-home-btn d-none d-sm-block">
-      <a href="/" class="text-white">
+      <a @click="onGotoMenu('/')" style="cursor: pointer" class="text-white">
         <i class="mdi mdi-home h1"></i>
       </a>
     </div>
@@ -25,7 +30,8 @@ export default {
                     <div class="text-center mt-3">
                       <h3 class="font-weight-bold">
                         <a
-                          href="/"
+                          @click="onGotoMenu('/')"
+                          style="cursor: pointer"
                           class="text-dark text-uppercase account-pages-logo"
                         >
                           <i class="mdi mdi-alien"></i> Laovietbank E-Form

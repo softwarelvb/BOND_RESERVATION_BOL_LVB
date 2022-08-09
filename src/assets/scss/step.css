@@ -1,0 +1,318 @@
+@import "../variable.scss";
+
+@media (max-width: 3000px) and (min-width: 500px) {
+	.steps {
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 12px;
+	}
+	.stepsWizard thead,
+	.stepsWizard tfoot,
+	.stepsWizard .thead,
+	.stepsWizard .tfoot {
+		border-bottom: 1px;
+		border-bottom: 1px;
+	}
+	.stepsWizard thead th {
+		vertical-align: bottom;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	#stepsWizard th,
+	#stepsWizard td {
+		vertical-align: top;
+		font-size: 20px;
+	}
+	#stepsWizard,
+	th,
+	td {
+		border: 0px solid red;
+	}
+	.numberCircle {
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		border: 2px solid;
+		text-align: center;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.active {
+		color: #222;
+	}
+	.normal {
+		color: #999;
+	}
+	.correct {
+		color: #2fd63c;
+		font-weight: bold;
+	}
+
+	.stepsWizard .step {
+		font-size: 12px;
+		text-align: center;
+		color: #666;
+		cursor: pointer;
+		margin: 0 3px;
+		padding: 5px 9px 5px 25px;
+		float: left;
+		position: relative;
+		background-color: #d9e3f7;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		transition: background-color 0.2s ease;
+		width: 99%;
+	}
+
+	.stepsWizard .step:after,
+	.stepsWizard .step:before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		right: -17px;
+		width: 0;
+		height: 0;
+		border-top: 14px solid transparent;
+		border-bottom: 14px solid transparent;
+		border-left: 17px solid #d9e3f7;
+		z-index: 1;
+		transition: border-color 0.2s ease;
+	}
+
+	.stepsWizard .step:before {
+		right: auto;
+		left: 0;
+		border-left: 17px solid #fff;
+		z-index: 0;
+	}
+
+	.stepsWizard .step:first-child:before {
+		border: none;
+
+		border-left: 17px solid #fff;
+		border-top: 15px solid transparent;
+		border-bottom: 12px solid transparent;
+	}
+
+	.stepsWizard .step:first-child {
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+
+	.stepsWizard .step span {
+		position: relative;
+	}
+
+	.stepsWizard .step span:before {
+		opacity: 0;
+		content: "✔";
+		position: absolute;
+		top: -2px;
+		left: -20px;
+	}
+
+	.stepsWizard .step.done span:before {
+		opacity: 1;
+		-webkit-transition: opacity 0.3s ease 0.5s;
+		-moz-transition: opacity 0.3s ease 0.5s;
+		-ms-transition: opacity 0.3s ease 0.5s;
+		transition: opacity 0.3s ease 0.5s;
+	}
+
+	.stepsWizard .step.current {
+		color: #fff;
+		background-color: #4caf50;
+	}
+
+	.stepsWizard .step.current1 {
+		color: #fff;
+		background-color: #388e3c;
+	}
+
+	.stepsWizard .step.current1:after {
+		border-left: 17px solid #388e3c;
+	}
+
+	.stepsWizard .step.current2 {
+		color: #fff;
+		background-color: #43a047;
+	}
+
+	.stepsWizard .step.current2:after {
+		border-left: 17px solid #43a047;
+	}
+
+	.stepsWizard .step.current:after {
+		border-left: 17px solid #4caf50;
+	}
+
+	.disabledStepWizard {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+}
+
+@media (max-width: 400px) and (min-width: 100px) {
+	.steps {
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 12px;
+	}
+	.stepsWizard thead,
+	.stepsWizard tfoot,
+	.stepsWizard .thead,
+	.stepsWizard .tfoot {
+		border-bottom: 1px;
+		border-bottom: 1px;
+	}
+	.stepsWizard thead th {
+		vertical-align: bottom;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	#stepsWizard th,
+	#stepsWizard td {
+		vertical-align: top;
+		font-size: 20px;
+	}
+	#stepsWizard,
+	th,
+	td {
+		border: 0px solid red;
+	}
+	.numberCircle {
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		border: 2px solid;
+		text-align: center;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.active {
+		color: #222;
+	}
+	.normal {
+		color: #999;
+	}
+	.correct {
+		color: #2fd63c;
+		font-weight: bold;
+	}
+
+	.stepsWizard .step {
+		font-size: 12px;
+		text-align: center;
+		color: #666;
+		cursor: default;
+		margin: 0 3px;
+		padding: 5px 9px 5px 25px;
+		float: left;
+		position: relative;
+		background-color: #d9e3f7;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		transition: background-color 0.2s ease;
+		width: 99%;
+	}
+
+	.stepsWizard .step:after,
+	.stepsWizard .step:before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		right: -15px;
+		top: 8px;
+		width: 0;
+		height: 0;
+		border-top: 14px solid transparent;
+		border-bottom: 14px solid transparent;
+		border-left: 17px solid #d9e3f7;
+		z-index: 1;
+		transition: border-color 0.2s ease;
+	}
+
+	.stepsWizard .step:before {
+		right: auto;
+		left: 0;
+		border-left: 17px solid #fff;
+		z-index: 0;
+	}
+
+	.stepsWizard .step:first-child:before {
+		border: none;
+
+		border-left: 17px solid #fff;
+		border-top: 15px solid transparent;
+		border-bottom: 12px solid transparent;
+	}
+
+	.stepsWizard .step:first-child {
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+
+	.stepsWizard .step span {
+		position: relative;
+	}
+
+	.stepsWizard .step span:before {
+		opacity: 0;
+		content: "✔";
+		position: absolute;
+		top: -2px;
+		left: -20px;
+	}
+
+	.stepsWizard .step.done span:before {
+		opacity: 1;
+		-webkit-transition: opacity 0.3s ease 0.5s;
+		-moz-transition: opacity 0.3s ease 0.5s;
+		-ms-transition: opacity 0.3s ease 0.5s;
+		transition: opacity 0.3s ease 0.5s;
+	}
+
+	.stepsWizard .step.current {
+		color: #fff;
+		background-color: #4caf50;
+	}
+
+	.stepsWizard .step.current1 {
+		color: #fff;
+		background-color: #388e3c;
+	}
+
+	.stepsWizard .step.current1:after {
+		border-left: 17px solid #388e3c;
+	}
+
+	.stepsWizard .step.current2 {
+		color: #fff;
+		background-color: #43a047;
+	}
+
+	.stepsWizard .step.current2:after {
+		border-left: 17px solid #43a047;
+	}
+
+	.stepsWizard .step.current:after {
+		border-left: 17px solid #4caf50;
+	}
+
+	.disabledStepWizard {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+}

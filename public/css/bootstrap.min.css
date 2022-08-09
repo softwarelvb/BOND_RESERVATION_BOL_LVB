@@ -6396,6 +6396,12 @@ button.bg-dark:hover {
 	display: -ms-inline-flexbox !important;
 	display: inline-flex !important;
 }
+@media (min-width: 100px) and (max-width: 570px) {
+	.d-sm-block {
+		display: block !important;
+	}
+}
+
 @media (min-width: 576px) {
 	.d-sm-none {
 		display: none !important;
