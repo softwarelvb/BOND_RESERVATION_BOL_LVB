@@ -17,7 +17,7 @@
                     {{ $t("Register.Header") }}
                   </span>
                 </h3>
-                <STEP @onStep="onStep" :step="step" class="pt-3"></STEP>
+                <STEP @onStep="onSelectStep" :step="step" class="pt-3"></STEP>
                 <REGISTERSTEP1
                   v-if="step === 1"
                   class="pt-3"
@@ -33,15 +33,10 @@
   </div>
 </template>
 <script>
-/**
- * Signup component
- */
-//  import Footer from "@/layouts/footer";
 
 const STEP = () => import("@/components/step/index.vue");
 const REGISTERSTEP1 = () => import("@/components/RegisterUser/STEP1.vue");
 const OTP = () => import("@/components/RegisterUser/STEP2.vue");
-import Services from "@/components/services";
 
 export default {
   name: "Signup",
@@ -56,7 +51,6 @@ export default {
     STEP,
     REGISTERSTEP1,
     OTP,
-    Services,
   },
   mounted() {
     this.$nextTick(() => {
@@ -67,12 +61,11 @@ export default {
     window.removeEventListener("resize", this.onResize);
   },
   methods: {
-    onStep(v) {
+    onSelectStep(v) {
       this.step = v;
       this.$store.set("step", v);
     },
     onNextStep() {
-      alert("ok");
       this.step = this.step + 1;
       this.$store.set("step", this.step);
     },

@@ -51,13 +51,11 @@ export default {
 
 		getNow() {
 			const today = new Date();
-			const date =
-				today.getDate().toString().padStart(2, "0") +
+			this.timestamp = today.getDate().toString().padStart(2, "0") +
 				"/" +
 				(today.getMonth() + 1).toString().padStart(2, "0") +
 				"/" +
 				today.getFullYear();
-			this.timestamp = date;
 		},
 		laoNumberString(n) {
 			let leveltext = ["", "ສິບ", "ຮ້ອຍ", "ພັນ", "ໝື່ນ", "ແສນ"];

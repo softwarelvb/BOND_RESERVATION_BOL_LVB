@@ -13,7 +13,9 @@ const state = {
 	lang: 'la',
 	loading: false,
 	modalAlert: null,
-	confirmModal: false
+	confirmModal: false,
+	step: 1,
+	registerData: null,
 }
 
 

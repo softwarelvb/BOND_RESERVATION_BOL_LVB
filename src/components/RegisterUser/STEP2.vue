@@ -2,7 +2,7 @@
   <div>
     <div id="app">
       <div
-        class="
+          class="
           container
           height-100
           d-flex
@@ -14,85 +14,85 @@
           <div class="card p-2 text-center shadow">
             <b-row class="justify-content-md-center pt-4 pb-3">
               <b-col cols="md-7 sm-12">
-                <h3>{{ $t("OTP.Header") }} <br /></h3>
+                <h3>{{ $t("OTP.Header") }} <br/></h3>
                 <h5>{{ $t("OTP.SecondHeader") }}</h5>
                 <div class="pt-1">
                   <span>{{ $t("OTP.EmailSent") }}</span>
-                  <small>*******9897</small>
+                  <small> {{ regisData.EMAIL }} </small>
                 </div>
                 <div
-                  id="otp"
-                  class="inputs d-flex flex-row justify-content-center mt-2"
+                    id="otp"
+                    class="inputs d-flex flex-row justify-content-center mt-2"
                 >
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    type="number"
-                    id="input1"
-                    v-on:keyup="inputenter(1)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    maxlength="1"
-                    v-model="value1"
+                      class="m-1 text-center form-control rounded"
+                      type="number"
+                      id="input1"
+                      v-on:keyup="inputenter(1)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="1"
+                      v-model="value1"
                   />
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    v-on:keyup="inputenter(2)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type="number"
-                    id="input2"
-                    maxlength="1"
-                    v-model="value2"
+                      class="m-1 text-center form-control rounded"
+                      v-on:keyup="inputenter(2)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      type="number"
+                      id="input2"
+                      maxlength="1"
+                      v-model="value2"
                   />
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    v-on:keyup="inputenter(3)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type="number"
-                    id="input3"
-                    v-model="value3"
-                    maxlength="1"
+                      class="m-1 text-center form-control rounded"
+                      v-on:keyup="inputenter(3)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      type="number"
+                      id="input3"
+                      v-model="value3"
+                      maxlength="1"
                   />
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    v-on:keyup="inputenter(4)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type="number"
-                    id="input4"
-                    v-model="value4"
-                    maxlength="1"
+                      class="m-1 text-center form-control rounded"
+                      v-on:keyup="inputenter(4)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      type="number"
+                      id="input4"
+                      v-model="value4"
+                      maxlength="1"
                   />
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    v-on:keyup="inputenter(5)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type="number"
-                    id="input5"
-                    v-model="value5"
-                    maxlength="1"
+                      class="m-1 text-center form-control rounded"
+                      v-on:keyup="inputenter(5)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      type="number"
+                      id="input5"
+                      v-model="value5"
+                      maxlength="1"
                   />
                   <b-form-input
-                    class="m-1 text-center form-control rounded"
-                    v-on:keyup="inputenter(6)"
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type="number"
-                    v-model="value6"
-                    id="input6"
-                    maxlength="1"
+                      class="m-1 text-center form-control rounded"
+                      v-on:keyup="inputenter(6)"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      type="number"
+                      v-model="value6"
+                      id="input6"
+                      maxlength="1"
                   />
                 </div>
 
                 <div class="mt-4">
                   <button
-                    @click="onValidate"
-                    :disabled="
+                      @click="onValidate"
+                      :disabled="
                       !value1 || !value2 || !value3 || !value4 || !value5
                     "
-                    class="btn btn-danger px-4 validate"
+                      class="btn btn-danger px-4 validate"
                   >
                     {{ $t("OTP.Validate") }}
                   </button>
                 </div>
                 <div
-                  class="
+                    class="
                     mt-3
                     content
                     d-flex
@@ -115,6 +115,8 @@
 </template>
 
 <script>
+import {get} from 'vuex-pathify'
+
 export default {
   data() {
     return {
@@ -127,15 +129,21 @@ export default {
     };
   },
   computed: {
+    regisData: get("registerData"),
     OTPInput() {
-      return (
-        this.value1.toString() +
-        this.value2.toString() +
-        this.value3.toString() +
-        this.value4.toString() +
-        this.value5.toString() +
-        this.value6.toString()
-      );
+      if (this.value1 && this.value2 && this.value3 && this.value4 && this.value5 && this.value6) {
+        return (
+            this.value1.toString() +
+            this.value2.toString() +
+            this.value3.toString() +
+            this.value4.toString() +
+            this.value5.toString() +
+            this.value6.toString()
+        );
+      } else {
+        return null
+      }
+
     },
   },
   methods: {
