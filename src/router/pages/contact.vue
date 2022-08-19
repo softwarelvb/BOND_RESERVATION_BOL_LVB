@@ -25,7 +25,7 @@ export default {
 
 <template>
   <section
-    class="section height-100vh"
+    class="section "
     id="contact"
     :style="windowWidth <= 820 ? 'height: 100%' : ''"
   >

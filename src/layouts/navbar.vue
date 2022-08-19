@@ -6,7 +6,8 @@
 const ChangeLanguages = () => import("@/components/changeLanguages.vue");
 const ModalConfirm = () => import("@/components/Modal/modalConfirm.vue");
 
-import { get } from "vuex-pathify";
+import {get} from "vuex-pathify";
+
 export default {
   data: () => ({
     modalAlert: {
@@ -78,37 +79,37 @@ export default {
 <template>
   <!-- STRAT NAVBAR -->
   <nav
-    class="
+      class="
       navbar navbar-expand-lg
       fixed-top
       navbar-white navbar-custom
       sticky sticky-dark
     "
-    id="navbar"
+      id="navbar"
   >
     <div class="container">
       <a
-        class="navbar-brand logo text-upspercase"
-        style="cursor: pointer"
-        @click="onGotoMenu('/')"
+          class="navbar-brand logo text-upspercase"
+          style="cursor: pointer"
+          @click="onGotoMenu('/')"
       >
         <img
-          src="@/assets/images/Logo-LVB-HD.png"
-          style="width: 130px"
-          class="p-2"
-          srcset=""
+            src="@/assets/images/Logo-LVB-HD.png"
+            style="width: 130px"
+            class="p-2"
+            srcset=""
         />
       </a>
 
       <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        @click="toggleMenu()"
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          @click="toggleMenu()"
       >
         <i class="mdi mdi-menu"></i>
       </button>
@@ -117,19 +118,19 @@ export default {
         <ul class="navbar-nav navbar-center ml-auto" id="mySidenav">
           <li class="nav-item">
             <a
-              class="nav-link"
-              data-scroll-spy-id="home"
-              @click="onGotoMenu('/')"
-              style="cursor: pointer"
+                class="nav-link"
+                data-scroll-spy-id="home"
+                @click="onGotoMenu('/')"
+                style="cursor: pointer"
             >
               <i class="pe-7s-home text-secondary"></i> {{ $t("navBar.Home") }}
             </a>
           </li>
           <li class="nav-item">
             <a
-              class="nav-link"
-              @click="onGotoMenu('form-online')"
-              style="cursor: pointer"
+                class="nav-link"
+                @click="onGotoMenu('create-form')"
+                style="cursor: pointer"
             >
               <i class="pe-7s-news-paper text-secondary"></i>
               {{ $t("navBar.Form") }}
@@ -150,31 +151,44 @@ export default {
               ຜະລິດຕະພັນ ແລະ ການບໍລິການ</a
             >
           </li> -->
-          <li class="nav-item">
+          <li class="nav-item" v-if="!token">
             <a
-              class="nav-link"
-              style="cursor: pointer"
-              @click="onGotoMenu('/contact-bank')"
+                class="nav-link"
+                style="cursor: pointer"
+                @click="onGotoMenu('/contact-bank')"
             >
               <i class="pe-7s-comment"></i> {{ $t("navBar.ContactUs") }}
             </a>
           </li>
           <li class="nav-item" v-if="!token">
             <a
-              class="nav-link"
-              style="cursor: pointer"
-              @click="onGotoMenu('/signup')"
+                class="nav-link"
+                style="cursor: pointer"
+                @click="onGotoMenu('/signup')"
             >
               <b-icon-pencil></b-icon-pencil>
               {{ $t("navBar.Register") }}
             </a>
           </li>
           <li class="nav-item" v-if="token">
-            <a class="nav-link" href="javascript: void(0);">
-              <b-icon-person></b-icon-person>
-              ຂໍ້ມູນບັນຊີ
+            <a
+                class="nav-link"
+                style="cursor: pointer"
+                @click="onGotoMenu('/user-form')">
+              <i class="pe-7s-notebook text-secondary"></i>
+              {{ $t("navBar.UserForm") }}
             </a>
           </li>
+          <li class="nav-item" v-if="token">
+            <a
+                class="nav-link"
+                style="cursor: pointer"
+                @click="onGotoMenu('/user-info')">
+              <b-icon-person></b-icon-person>
+              {{ $t("navBar.UserInfo") }}
+            </a>
+          </li>
+
         </ul>
         <div class="nav-button ml-auto">
           <ul class="nav navbar-nav">

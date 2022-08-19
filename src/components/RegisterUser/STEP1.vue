@@ -1,11 +1,11 @@
 <template>
   <div>
     <b-card class="shadow">
-      <h4 style="font-size: 20px" class="text-center">
+      <h4 style="font-size: 20px" class="text-center text-primary">
         <font-awesome-icon icon="fa-solid fa-address-book"/>
         {{ $t("Register.FormRegister") }}
       </h4>
-      <div class="pl-3 pb-3 pr-3">
+      <div class="pl-3 pb-4 pr-3">
         <b-row>
           <b-col class="pt-2" sm="12" lg="4" md="4">
             <label for="firstname"> {{ $t("Register.NameAndLastName") }}</label>
@@ -123,7 +123,7 @@
           </b-col>
           <b-col class="pt-2" sm="12" lg="4" md="4">
             <b-form-group>
-              <label for="">{{ $t("Register.SelectCustomerTyple") }}</label>
+              <label for="">{{ $t("Register.SelectCustomerType") }}</label>
               <div>
                 <b-form-radio-group
                     v-model="selected"
@@ -158,6 +158,7 @@
 </template>
 
 <script>
+import {get} from 'vuex-pathify';
 import RestApi from "@/API/RestApi";
 
 export default {
@@ -187,6 +188,9 @@ export default {
     typePassword() {
       return this.showPassword === false ? "password" : "text";
     },
+  },
+  mounted() {
+    this.$store.set("reqRegisterData", "");
   },
   methods: {
     async btnRegister() {
@@ -227,8 +231,9 @@ export default {
             if (res && res.data.error_code !== '00') {
               this.$store.set("modalAlert", {state: true, text: res.data.error_desc, type: 'alert'});
               loading.close();
-            }else {
-              this.$store.set("registerData", res.data.data)
+            } else {
+              this.$store.set("registerData", res.data.data);
+              this.$store.set("reqRegisterData", req);
               this.$emit("NextStep");
               loading.close();
             }

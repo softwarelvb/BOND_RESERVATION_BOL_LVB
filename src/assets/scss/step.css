@@ -48,7 +48,7 @@
 		color: #999;
 	}
 	.correct {
-		color: #2fd63c;
+		color: #1e88e5;
 		font-weight: bold;
 	}
 
@@ -127,29 +127,29 @@
 
 	.stepsWizard .step.current {
 		color: #fff;
-		background-color: #4caf50;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current1 {
 		color: #fff;
-		background-color: #388e3c;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current1:after {
-		border-left: 17px solid #388e3c;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.stepsWizard .step.current2 {
 		color: #fff;
-		background-color: #43a047;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current2:after {
-		border-left: 17px solid #43a047;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.stepsWizard .step.current:after {
-		border-left: 17px solid #4caf50;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.disabledStepWizard {
@@ -158,7 +158,7 @@
 	}
 }
 
-@media (max-width: 400px) and (min-width: 100px) {
+@media (max-width: 499px) and (min-width: 100px) {
 	.steps {
 		padding-top: 0;
 		padding-bottom: 0;
@@ -206,7 +206,7 @@
 		color: #999;
 	}
 	.correct {
-		color: #2fd63c;
+		color: #1e88e5;
 		font-weight: bold;
 	}
 
@@ -286,29 +286,29 @@
 
 	.stepsWizard .step.current {
 		color: #fff;
-		background-color: #4caf50;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current1 {
 		color: #fff;
-		background-color: #388e3c;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current1:after {
-		border-left: 17px solid #388e3c;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.stepsWizard .step.current2 {
 		color: #fff;
-		background-color: #43a047;
+		background-color: #1e88e5;
 	}
 
 	.stepsWizard .step.current2:after {
-		border-left: 17px solid #43a047;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.stepsWizard .step.current:after {
-		border-left: 17px solid #4caf50;
+		border-left: 17px solid #1e88e5;
 	}
 
 	.disabledStepWizard {

@@ -6,7 +6,7 @@
       @close="handleClose"
       not-center
       :value="modalDetial.state"
-      v-if="modalDetial && modalDetial.type == 'alert'"
+      v-if="modalDetial && modalDetial.type === 'alert'"
     >
       <template #header>
         <h4 class="not-margin pt-3 text-center" style="font-size: 18px">
@@ -16,10 +16,9 @@
           </strong>
         </h4>
       </template>
-      <div class="con-content text-center">
+      <div class="con-content text-center pt-3">
         <p style="font-size: 14px">{{ modalDetial.text }}</p>
       </div>
-
       <template #footer>
         <div class="con-footer">
           <vs-button @click="handleClose" transparent> Ok </vs-button>

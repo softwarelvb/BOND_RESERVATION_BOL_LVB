@@ -9,7 +9,6 @@ export default {
 		Login: "Login",
 		UserInfo: "User Info",
 		Logout: "Logout",
-
 	},
 	Home: {
 		Welcome: "Welcome to log in to the online form creation service of LVB",
@@ -109,13 +108,15 @@ export default {
 		NotSamePassword: "Please double check the password, the password is not the same",
 		Phone: "Phone number",
 		PleaseEnterPhone: "Please enter the correct phone number",
-		SelectCustomerTyple: "Select a customer type",
+		SelectCustomerType: "Select a customer type",
 		Register: "Register",
 		Login: "Login",
 		DoyouhaveAccount: "Do you already have an account",
 		IndividualCustomer: "Individual customers",
 		CorporateCustomer: "Corporate customers",
 		FormRegister: "User Form Register",
+		CustomerType:"Customer type",
+		RegisterDate:"Register Date"
 	},
 	Loading: {
 		text: "Loading..."
@@ -127,7 +128,6 @@ export default {
 		Confirm: "Confirm",
 		Cancle: "Cancle",
 		PleaseEnterValue: "Please enter the information completely"
-
 	},
 	Lang: {
 		selectLang: "Please choose language"
@@ -147,12 +147,14 @@ export default {
 		Header: "Create a form online and download the form",
 		Desciption: "You can create a form and download the form as below:",
 		CreateForm: "Create form",
-		Download: "Download"
+		Download: "Download",
+		DownloadFormAndCreateForm:"Download and create a user form",
+		DownloadFormPDF:"Download Form PDF",
 	},
 	Step: {
 		Header: "Step",
 		Step1: "Enter user information",
-		Step2: "Enter the code OTP",
+		Step2: "Verify OTP",
 		Step3: "Completed"
 	},
 	OTP: {
@@ -162,5 +164,60 @@ export default {
 		Validate: "Validate",
 		DonotgetOTP: "Didn't get the code",
 		Resend: "Resend"
+	},
+	Notification: {
+		Success: "Notification completed",
+		LoginSuccess: "Login is completed",
+		LogoutSuccess: "Logout is completed",
+		RegisterUserSuccess:"User registration is completed",
+	},
+	FormType:{
+		Name:"Form type",
+		CashWithDrawSlip:"Cash withdrawal slip",
+		PaymentOrder:"Payment order form",
+		ChequeDepost:"Cheque depost slip",
+		OutWardTransfer:"Foreign money transfer proposal and currency trading agreement",
+		PleaseSelectFormType:"Please select the type of form",
+		CreateForm: "Create a form",
+		UserForm:"User form"
+	},
+	FormPaymentOrder: {
+		Name:"Payment order form",
+		Amount: "Amount",
+		PleaseEnterAmount: "Please enter amount",
+		AmountText: "Amount in text",
+		Currency: "Currency",
+		Remark: "Content",
+		ExchangeTo: "Payment Type",
+		ExchangeRate: "Exchange Rate",
+		Branch: "Branch",
+		Date: "Date",
+		PleaseEnterDate: "Please enter the date",
+		DebitAccName: "Account name to debit",
+		PleaseEnterDebitAccName: "Please enter the account name to debit",
+		Acc: "Account Number",
+		PleaseEnterAcc: "Please enter the correct and complete account number",
+		AtBank: "At Bank",
+		Receiver: "Recipient",
+		PersonalID: "identity card number",
+		PersonalDate: "Date of ID issued",
+		PersonalIssueDate: "Place of Issue of Identity Card",
+		CreditAccName: "Account Name",
+		PleaseEnterCreditAccName: "Please enter an account name",
+		onContinue: "Proceed form registration",
+		InformationCredit: "Recipient Details",
+		InformationDebit: "Debit information",
+		BasicInfo:"Basic Info",
+		Detail: "Item Details",
+		CreateFormDate: "Form creation date",
+		Table: {
+			No: "No",
+			ReceiverAccount: "Receiver Account Number",
+			Action: "Management",
+			Detail: "Detail",
+			DontHaveAnyData: "No data"
+		},
+		FormExample:"Form Example",
+		DownloadFile:"Download File",
 	},
 }

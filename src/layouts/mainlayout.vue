@@ -1,10 +1,10 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <div v-scroll-spy>
-      <router-view></router-view>
-      <Footer></Footer>
+    <div style="min-height: 57.6vh">
+      <router-view ></router-view>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -20,5 +20,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+
+
+
 </style>

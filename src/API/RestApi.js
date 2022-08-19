@@ -6,5 +6,18 @@ export default {
 	},
 	doLogin(req) {
 		return axios.post("login", req)
+	},
+	doVerifyOTP(req){
+		return axios.post('confirm/otp', req);
+	},
+	// onSavePaymentOrderForm(path,req){
+	// 	return axios.post(`form/insert/${path}`, req)
+	// }
+	onSavePaymentOrderForm(req){
+		return axios.post('form/insert/payment/order', req)
+	},
+	onGetUserForm(path,req){
+		return axios.post(`form/get/${path}`, req)
 	}
+
 }

@@ -7,8 +7,7 @@
         </a>
       </div>
       <section
-        class="height-100vh"
-        :style="windowWidth <= 820 ? 'height: 100%' : ''"
+          :style="windowWidth <= 820 ? 'height: 100%' : ''"
       >
         <div class="display-table">
           <div class="display-table-cell">
@@ -17,32 +16,33 @@
                 <div class="card-body">
                   <div class="mt-1">
                     <h4
-                      class="mt-3 pt-5 text-center text-primary"
-                      style="font-size: calc(0.7vw + 1vh + 1vmin)"
+                        class="mt-4 pt-5 text-center text-primary"
+                        :style="windowWidth <= 820 ? '' : ''"
+                        style="font-size: calc(0.7vw + 1vh + 1vmin);"
                     >
-                      <font-awesome-icon icon="fa-solid fa-clipboard-list" />
+                      <font-awesome-icon icon="fa-solid fa-clipboard-list"/>
                       {{ $t("Form.Header") }}
                     </h4>
                     <AlertModal></AlertModal>
                     <b-row class="pt-2">
                       <b-col cols="sm-6 md-6 lg-6" class="mt-2">
                         <b-card
-                          border-variant="primary"
-                          header="ແບບຟອມສຳລັບການໂອນເງິນຕ່າງປະເທດ"
-                          header-bg-variant="primary"
-                          header-text-variant="white"
-                          align="center"
+                            border-variant="primary"
+                            header="ແບບຟອມສຳລັບການໂອນເງິນຕ່າງປະເທດ"
+                            header-bg-variant="primary"
+                            header-text-variant="white"
+                            align="center"
                         >
                           <template #header>
                             <span
-                              ><font-awesome-icon
+                            ><font-awesome-icon
                                 icon="fa-solid fa-clipboard-list"
-                              />
+                            />
                               ແບບຟອມ ສຳລັບການໂອນເງິນຕ່າງປະເທດ (LA/VN)</span
                             >
                           </template>
                           <b-card-text
-                            >ແບບຟອມສະເໜີຂໍໂອນເງິນໄປຕ່າງປະເທດ ແລະ
+                          >ແບບຟອມສະເໜີຂໍໂອນເງິນໄປຕ່າງປະເທດ ແລະ
                             ສັນຍາຊື້ຂາຍເງິນຕາຕ່າງປະເທດ
                           </b-card-text>
                           <b-card-text>
@@ -56,39 +56,41 @@
                           </b-card-text>
                           <b-button size="sm" variant="outline-primary">
                             <font-awesome-icon
-                              icon="fa-solid fa-pen-to-square"
+                                icon="fa-solid fa-pen-to-square"
                             />
-                            {{ $t("Form.CreateForm") }}</b-button
+                            {{ $t("Form.CreateForm") }}
+                          </b-button
                           >
                           <b-button
-                            class="ml-1 btn btn-sm"
-                            variant="outline-primary"
-                            @click="downloadFile(fileOutWardVN)"
+                              class="ml-1 btn btn-sm"
+                              variant="outline-primary"
+                              @click="downloadFile(fileOutWardVN)"
                           >
-                            <font-awesome-icon icon="fa-solid fa-download" />
-                            {{ $t("Form.Download") }}</b-button
+                            <font-awesome-icon icon="fa-solid fa-download"/>
+                            {{ $t("Form.Download") }}
+                          </b-button
                           >
                         </b-card>
                       </b-col>
                       <b-col cols="sm-6 md-6 lg-6">
                         <div class="mt-2">
                           <b-card
-                            border-variant="primary"
-                            header="ແບບຟອມສຳລັບການໂອນເງິນຕ່າງປະເທດ"
-                            header-bg-variant="primary"
-                            header-text-variant="white"
-                            align="center"
+                              border-variant="primary"
+                              header="ແບບຟອມສຳລັບການໂອນເງິນຕ່າງປະເທດ"
+                              header-bg-variant="primary"
+                              header-text-variant="white"
+                              align="center"
                           >
                             <template #header>
                               <span
-                                ><font-awesome-icon
+                              ><font-awesome-icon
                                   icon="fa-solid fa-clipboard-list"
-                                />
+                              />
                                 ແບບຟອມ ສຳລັບການໂອນເງິນຕ່າງປະເທດ (LA/EN)
                               </span>
                             </template>
                             <b-card-text class=""
-                              >ແບບຟອມ
+                            >ແບບຟອມ
                               ໃບສະເໜີຂໍໂອນເງິນໄປຕ່າງປະເທດຄວບສັນຍາຊື້ຂາຍເງິນຕາຕ່າງປະເທດ
                             </b-card-text>
                             <b-card-text class="">
@@ -103,24 +105,26 @@
                             </b-card-text>
 
                             <b-button
-                              size="sm"
-                              href="#"
-                              variant="outline-primary"
-                              class="card-link"
+                                size="sm"
+                                href="#"
+                                variant="outline-primary"
+                                class="card-link"
                             >
                               <font-awesome-icon
-                                icon="fa-solid fa-pen-to-square"
+                                  icon="fa-solid fa-pen-to-square"
                               />
-                              {{ $t("Form.CreateForm") }}</b-button
+                              {{ $t("Form.CreateForm") }}
+                            </b-button
                             >
                             <b-button
-                              size="sm"
-                              class="ml-1"
-                              variant="outline-primary"
-                              @click="downloadFile(fileOutWardEN)"
+                                size="sm"
+                                class="ml-1"
+                                variant="outline-primary"
+                                @click="downloadFile(fileOutWardEN)"
                             >
-                              <font-awesome-icon icon="fa-solid fa-download" />
-                              {{ $t("Form.Download") }}</b-button
+                              <font-awesome-icon icon="fa-solid fa-download"/>
+                              {{ $t("Form.Download") }}
+                            </b-button
                             >
                           </b-card>
                         </div>
@@ -139,6 +143,7 @@
 
 <script>
 import axios from "axios";
+
 const AlertModal = () => import("@/components/Modal/index.vue");
 
 export default {
@@ -147,7 +152,7 @@ export default {
       windowWidth: window.innerWidth,
       fileOutWardEN: "LAO VIET BANK- OUTWARD REMITTANCE FORM LAO-ENGLISH.pdf",
       fileOutWardVN:
-        "LAO VIET BANK- OUTWARD REMITTANCE FORM LAO-VIETNAMESE.pdf",
+          "LAO VIET BANK- OUTWARD REMITTANCE FORM LAO-VIETNAMESE.pdf",
     };
   },
   components: {

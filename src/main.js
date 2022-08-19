@@ -42,7 +42,6 @@ import CountryFlag from 'vue-country-flag'
 Vue.component('country-flag', CountryFlag)
 
 
-
 //validate
 import * as VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
@@ -66,21 +65,21 @@ import {
 
 /* import specific icons */
 import {
-	faAddressBook,
-	faBell,
-	faCircleCheck,
+	faAddressBook, faArrowLeft,
+	faBell, faCheck,
+	faCircleCheck, faCircleInfo,
 	faClipboardList,
 	faDownload,
 	faEnvelopeCircleCheck,
-	faExclamation,
-	faListSquares,
-	faMoneyBillTransfer,
-	faPenToSquare,
-	faSquareFull
+	faExclamation, faEye, faFileWaveform,
+	faListSquares, faLock, faMagnifyingGlass,
+	faMoneyBillTransfer, faPencil,
+	faPenToSquare, faPlus,
+	faSquareFull, faUserCheck, faUserGear
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faAddressBook, faSquareFull, faListSquares, faExclamation, faBell, faMoneyBillTransfer, faPenToSquare, faDownload, faClipboardList, faEnvelopeCircleCheck, faCircleCheck)
+library.add(faArrowLeft,faPlus,faMagnifyingGlass,faEye,faFileWaveform,faUserGear,faCircleInfo,faCheck,faUserCheck,faLock,faPencil,faAddressBook, faSquareFull, faListSquares, faExclamation, faBell, faMoneyBillTransfer, faPenToSquare, faDownload, faClipboardList, faEnvelopeCircleCheck, faCircleCheck)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

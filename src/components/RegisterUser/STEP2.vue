@@ -11,14 +11,16 @@
         "
       >
         <div class="position-relative">
-          <div class="card p-2 text-center shadow">
+          <div class="card p-2 pb-4 text-center shadow">
             <b-row class="justify-content-md-center pt-4 pb-3">
               <b-col cols="md-7 sm-12">
-                <h3>{{ $t("OTP.Header") }} <br/></h3>
+                <h4>
+                  <font-awesome-icon icon="fa-solid fa-lock"/>
+                  {{ $t("OTP.Header") }} <br/></h4>
                 <h5>{{ $t("OTP.SecondHeader") }}</h5>
-                <div class="pt-1">
+                <div class="pt-1" style="font-size: 14px">
                   <span>{{ $t("OTP.EmailSent") }}</span>
-                  <small> {{ regisData.EMAIL }} </small>
+                  {{ regisData && regisData.EMAIL ? regisData.EMAIL : '' }}
                 </div>
                 <div
                     id="otp"
@@ -100,10 +102,15 @@
                     align-items-center
                   "
                 >
-                  <span> {{ $t("OTP.DonotgetOTP") }} ? </span>
-                  <a href="#" class="text-decoration-none ms-3">
-                    {{ $t("OTP.Resend") }}(1/3)</a
-                  >
+
+                  <div>
+                    <span style="font-size: 14px" class="mr-1 "> ບໍ່ໄດ້ຮັບລະຫັດຜ່ານຢືນຢັນ ?  </span>
+                    <b-link @click="onRequestNewOTP" size="sm"
+                            class=" text-decoration-none ">
+                      {{ $t("OTP.Resend") }}
+                    </b-link
+                    >
+                  </div>
                 </div>
               </b-col>
             </b-row>
@@ -116,10 +123,12 @@
 
 <script>
 import {get} from 'vuex-pathify'
+import RestApi from "@/API/RestApi";
 
 export default {
   data() {
     return {
+      timerCount: 180,
       value1: null,
       value2: null,
       value3: null,
@@ -130,6 +139,7 @@ export default {
   },
   computed: {
     regisData: get("registerData"),
+    reqData: get("reqRegisterData"),
     OTPInput() {
       if (this.value1 && this.value2 && this.value3 && this.value4 && this.value5 && this.value6) {
         return (
@@ -147,6 +157,36 @@ export default {
     },
   },
   methods: {
+    onRequestNewOTP() {
+      console.log("mama", this.reqData);
+      const loading = this.$vs.loading({
+        text: this.$t("Loading.text"),
+      });
+      RestApi.doRegister(this.reqData)
+          .then((res) => {
+            if (res && res.data.error_code !== '00') {
+              this.$store.set("modalAlert", {state: true, text: res.data.error_desc, type: 'alert'});
+              loading.close();
+            } else {
+              loading.close();
+              console.log("res OTP:", res);
+              this.$emit("NextStep");
+              this.$vs.notification({
+                duration: "1500",
+                progress: "auto",
+                color: "success",
+                position: "top-right",
+                title: this.$t("Notification.Success"),
+                text: this.$t("Notification.LoginSuccess"),
+              });
+            }
+          })
+          .catch((err) => {
+            loading.close();
+            this.$store.set("modalAlert", {state: true, text: err, type: 'alert'});
+            console.log(err);
+          });
+    },
     onValidate() {
       //   console.log("OTP INPUT", this.OTPInput);
       console.log(this.OTPInput, this.OTPInput.toString().length);
@@ -158,6 +198,39 @@ export default {
         });
         return;
       }
+      let req = {
+        "email": this.regisData.EMAIL,
+        "otp_id": this.regisData.OTP_ID,
+        "otp_code": this.OTPInput,
+        "register_id": this.regisData.REGISTER_ID,
+        "type": "REGISTER"
+      }
+      const loading = this.$vs.loading({
+        text: this.$t("Loading.text"),
+      });
+      console.log("req", req)
+      RestApi.doVerifyOTP(req).then((res) => {
+        console.log(res);
+        if (res && res.data.error_code !== "00") {
+          this.$store.set("modalAlert", {state: true, text: res.data.error_desc, type: 'alert'});
+        } else {
+          console.log("res OTP:", res);
+          this.$emit("NextStep");
+          this.$vs.notification({
+            duration: "3000",
+            progress: "auto",
+            color: "success",
+            position: "top-right",
+            title: this.$t("Notification.Success"),
+            text: this.$t("Notification.RegisterUserSuccess"),
+          });
+        }
+        loading.close();
+      }).catch((err) => {
+        loading.close();
+        this.$store.set("modalAlert", {state: true, text: err, type: 'alert'});
+        console.log(err);
+      });
     },
     inputenter(id) {
       const inputs = document.querySelectorAll("#otp > *[id]");
@@ -182,7 +255,19 @@ export default {
         });
       }
     },
+    // countDownTimer() {
+    //   if (this.timerCount > 0) {
+    //     setTimeout(() => {
+    //       this.timerCount -= 1
+    //       this.countDownTimer()
+    //     }, 1000)
+    //   }
+    // }
   },
+  // created() {
+  //   this.countDownTimer()
+  // },
+
 };
 </script>
 
