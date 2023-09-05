@@ -13,14 +13,34 @@ const state = {
   modalAlert: null,
   confirmModal: false,
   step: 1,
-  registerData: null,
-  reqRegisterData: null,
-  userPaymentOrderForm:[],
+  // registerData: null,
+  // reqRegisterData: null,
+  userBondReservation: [],
   OptionCurreny: [
-    {item: 'LAK', name: 'LAK'},
-    {item: 'USD', name: 'USD'},
-    {item: 'THB', name: 'THB'},
-    {item: 'VND', name: 'VND'}
+    { item: "LAK", name: "LAK" },
+    { item: "USD", name: "USD" },
+    { item: "THB", name: "THB" },
+    { item: "VND", name: "VND" },
+  ],
+  provinces: [
+    { name: "ອັດຕະປື", item: "ATP" },
+    { name: "ບໍ່ແກ້ວ", item: "BKO" },
+    { name: "ບໍລິຄຳໄຊ", item: "BOL" },
+    { name: "ຈຳປາສັກ", item: "CHP" },
+    { name: "ຫົວພັນ", item: "HOP" },
+    { name: "ຄຳມ່ວນ", item: "KHM" },
+    { name: "ຫຼວງນ້ຳທາ", item: "LNT" },
+    { name: "ຫຼວງພຣະບາງ", item: "LPQ" },
+    { name: "ອຸດົມໄຊ", item: "ODX" },
+    { name: "ຜົ້ງສາລີ", item: "PHO" },
+    { name: "ສາລະວັນ", item: "SLV" },
+    { name: "ສະຫວັນນະເຂດ", item: "SVK" },
+    { name: "ເຊກອງ", item: "SKH" },
+    { name: "ວຽງຈັນ", item: "VTP" },
+    { name: "ນະຄອນຫຼວງວຽງຈັນ", item: "VTE" },
+    { name: "ໄຊຍະບູລີ", item: "XYB" },
+    { name: "ໄຊສົມບູນ", item: "XSB" },
+    { name: "ຊຽງຂວາງ", item: "XKH" },
   ],
   branch: [
     {
@@ -124,6 +144,9 @@ const state = {
       item: "0110",
     },
   ],
+  user_bond_data: {
+    FORMID: "",
+  },
 };
 
 Vue.use(Vuex);

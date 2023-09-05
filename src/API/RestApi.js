@@ -13,11 +13,14 @@ export default {
 	// onSavePaymentOrderForm(path,req){
 	// 	return axios.post(`form/insert/${path}`, req)
 	// }
-	onSavePaymentOrderForm(req){
+	onSaveBondReservation(req){
 		return axios.post('form/insert/payment/order', req)
 	},
 	onGetUserForm(path,req){
 		return axios.post(`form/get/${path}`, req)
+	},
+	onDoCreateFormBond(req){
+		return axios.post(`/register`, req)
 	}
 
 }

@@ -704,7 +704,7 @@ iframe {
 ======================================*/
 
 .bg-web-desc {
-	background: url("../images/img-1.jpg");
+	/*background: url("../images/img-1.jpg");*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -1012,7 +1012,6 @@ textarea.form-control {
 }
 
 .footer {
-
 	padding: 50px 0;
 	background-color: #0c44ee;
 	background: linear-gradient(to right, #03539e, #03539e);

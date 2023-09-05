@@ -1,7 +1,8 @@
 import axios from "axios";
 import store from "../stores/store";
+// import jwt from "jsonwebtoken";
 
-axios.defaults.baseURL = `${process.env.VUE_APP_API}`;
+axios.defaults.baseURL = `${process.env.VUE_APP_API_BOND}`;
 
 export default function setup() {
   // let loader;
@@ -18,6 +19,15 @@ export default function setup() {
 
       // });
 
+      // try {
+      //   const payload = { id: "LVB" };
+      //   const secretKey = "ADMINISTRATOR2022@AdminSecretkey";
+      //   const token = jwt.sign(payload, secretKey);
+      //   console.log(token);
+      // } catch (e) {
+      //   console.log(e);
+      // }
+
       const token = store.get("token");
       // const api_key = store.get("api_keys")
       // console.log(process.env.VUE_APP_API_KEY_SECRET);
@@ -31,7 +41,7 @@ export default function setup() {
         "x-access-token": `${token}`,
         Authorization: `Bearer ${token}`,
       };
-      console.log(config);
+      // console.log(config);
       return config;
     },
     (err) => {

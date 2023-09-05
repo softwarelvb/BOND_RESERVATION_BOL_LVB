@@ -223,3 +223,4 @@ export default {
     <!--START FOOTER ALTER-->
   </div>
 </template>
+

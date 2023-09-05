@@ -10,7 +10,7 @@ export default {
     this.$nextTick(() => {
       window.addEventListener("resize", this.onResize);
     });
-    console.log(process.env.VUE_APP_ROOT_API);
+    // console.log(process.env.VUE_APP_ROOT_API);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);

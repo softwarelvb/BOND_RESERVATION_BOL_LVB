@@ -8,6 +8,7 @@ export default {
 		Register: "Register",
 		Login: "Login",
 		UserInfo: "User Info",
+		UserForm:"User Form",
 		Logout: "Logout",
 	},
 	Home: {

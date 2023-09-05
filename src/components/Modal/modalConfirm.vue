@@ -46,7 +46,7 @@ export default {
       this.$store.set("modalAlert", null);
     },
     confirm() {
-      console.log("ok");
+      // console.log("ok");
       this.$emit("onConfirm", true);
     },
   },

@@ -8,8 +8,8 @@ export default {
 		Register: "Đăng nhập",
 		Login: "Đăng nhập",
 		UserInfo: "Thông tin người dùng",
+		UserForm:"Hình thức riêng",
 		Logout: "Đăng xuất",
-
 	},
 	Home: {
 		Welcome: "Chào mừng bạn đăng nhập vào dịch vụ tạo biểu mẫu trực tuyến",
